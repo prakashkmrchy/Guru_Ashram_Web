@@ -1,0 +1,19 @@
+{
+  "name": "guru_ashram_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prakashkmrchy/Guru_Ashram_Web.git"
+  },
+  "author": "Prakash And Satyam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prakashkmrchy/Guru_Ashram_Web/issues"
+  },
+  "homepage": "https://github.com/prakashkmrchy/Guru_Ashram_Web#readme"
+}
