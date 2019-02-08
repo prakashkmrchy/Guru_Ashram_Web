@@ -17,7 +17,7 @@ header
                     li
                         a(href="about.html") About
                     li
-                        a(class="active", href="courses.html") Courses
+                        a(class=(path === '/courses' ? 'active' : ''), href="courses.html") Courses
                     li
                         a(href="institutes.html") Institutes
                     li(class="dropdown")
@@ -29,7 +29,7 @@ header
                             li
                                 a(href="typography.html") Typography
                     li
-                        a(href="contact.html") Contact
+                        a(href="contact.html", class= (path === '/contact' ? 'active' : '')) Contact
                     if !loggedIn
                         li
                             a(href="/login") Login
