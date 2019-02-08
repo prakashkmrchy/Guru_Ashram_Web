@@ -872,11 +872,11 @@ p.sub-para {
 /*-- registration --*/
 
 ul.form-buttons {
-	float: left;
+	float:center;
 }
 
 ul.form-buttons li a i {
-	color: #00b6e3;
+	color: #33f801f3;
 	font-size: 17px;
 	padding-right: 4px;
 }
@@ -887,12 +887,12 @@ ul.form-buttons li {
 }
 
 ul.form-buttons li a {
-	background: #ffffff;
+	background: #852fb6c7;
 	color: #000;
-	font-size: 0.8em;
+	font-size: 1.2em;
 	display: inline-block;
 	text-decoration: none;
-	padding: 8px 16px;
+	padding: 12px 16px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
