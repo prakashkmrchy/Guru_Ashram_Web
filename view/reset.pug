@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+        link(rel="stylesheet", type="text/css", href="bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", type="text/css", href="css/my-login.css")
+    body(class="my-login-page")
+        section(class="h-100")
+            div(class="container h-100")
+                div(class="row justify-content-md-center align-items-center h-100")
+                    div(class="card-wrapper")
+                        .brand
+                            img(src="img/logo.jpg" alt="bootstrap 4 login page")
+                        div(class="card fat")
+                            div(class="card-body")
+                                h4.card-title Reset Password
+                                form.my-login-validation(method="POST", novalidate="")
+                                    .form-group
+                                        label(for="new-password") New Password
+                                        input(type="password", class="form-control", name="password", required, autofocus, data-eye)#new-password
+                                        .invalid-feedback Password is required
+                                        div(class="form-text text-muted") Make sure your password is strong and easy to remember
+                                    div(class="form-group m-0")
+                                        button(class="btn btn-primary btn-block", type="submit") Reset Password
+                .footer Copyright &copy; 2017 &mdash; Your Company 
+    script(src="js/jquery.min.js")
+    script(src="js/my-login.js")

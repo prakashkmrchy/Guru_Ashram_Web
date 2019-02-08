@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title My Login Page
+		link(rel="stylesheet", type="text/css",href="css/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="css/my-login.css")
+		
+
+	body(class="my-login-page")
+		section(class="h-100")
+			div(class="container h-100")
+				div(class="row justify-content-md-center h-100")
+					div(class="card-wrapper")
+						div(class="brand")
+							img(src="images/logo.jpg", alt="logo")
+						div(class="card fat")
+							div.card-body
+								h4.card-title Login
+								form.my-login-validation(method="POST", action="/api/login", novalidate="")
+									div.form-group
+										label(for="email") E-Mail Address
+										input.form-control(type="email", name="email" value="" required autofocus)#email
+										div.invalid-feedback Email is invalid
+
+									div.form-group
+										label(for="password") Password
+											a.float-right(href="/forgot") Forgot Password?
+										input.form-control(type="password", name="password" required data-eye)#password
+										div.invalid-feedback Password is required
+
+									div.form-group
+										div(class="custom-checkbox custom-control")
+											input.custom-control-input(type="checkbox" name="remember")#remember
+											label.custom-control-label(for="remember") Remeber Me
+									
+									if tmp
+										.temp
+											p Invalid User Name or Password. Please retry!!
+									div.form-group.m-0
+										button.btn.btn-primary.btn-block(type="submit") Login
+									div.mt-4.text-center Don't have an account? 
+										a(href="register.html") Create One
+									
+				div.footer Copyright &copy; 2017 &mdash; Your Company 
+
+	script(src="js/jquery-2.2.3.min.js")
+	script(src="js/bootstrap.min.js")
+	script(src="js/my-login.js")

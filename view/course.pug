@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+html(lang="en")
+    include layout/head.pug
+    body
+        div(class="banner inner-banner", id="home")
+            div(class="container")
+                include layout/header.pug
+                div(class="clearfix")
+        div(class="courses")
+            div(class="container")
+                h5(class="main-w3l-title") Courses
+                div(class="col-md-4 courses-info")
+                    h5 PHP Web Development
+                    div(class="c-image")
+                        img(src="images/t1.jpg" alt=" " class="img-responsive")
+                        h6 Trainer Name
+                        div(class="clearfix")
+                    p(class="numbers") Students
+                        span 20 
+                    p(class="paragraph-agileinfo") Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+                    p(class="batch") Batch Starts from 
+                        span 1 Feb 2018
+                div(class="col-md-4 courses-info")
+                    h5 .NET Programming
+                    div(class="c-image")
+                        img(src="images/t2.jpg" alt=" " class="img-responsive")
+                        h6 Trainer Name
+                        div(class="clearfix")
+                    p(class="numbers") Students
+                        span 30
+                    p(class="paragraph-agileinfo") Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+                    p(class="batch") Batch Starts from 
+                        span 15 Jan 2018
+                div(class="col-md-4 courses-info")
+                    h5 JavScript / Ajax
+                    div(class="c-image")
+                        img(src="images/t3.jpg", alt=" ", class="img-responsive")
+                        h6 Trainer Name
+                        div(class="clearfix")
+                    p(class="numbers") Students
+                        span 40 
+                    p(class="paragraph-agileinfo") Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+                    p(class="batch") Batch Starts from 
+                        span 15 Feb 2018
+                div(class="col-md-4 courses-info")
+                    h5 Web Designing
+                    div(class="c-image")
+                        img(src="images/t4.jpg" alt=" " class="img-responsive")
+                        h6 Trainer Name
+                        div(class="clearfix")
+                    p(class="numbers") Student
+                        span 50
+                    p(class="paragraph-agileinfo") Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+                    p(class="batch") Batch Starts from 
+                        span 1 Mar 2018
+                div(class="col-md-4 courses-info")
+                    h5 Logo/Icons Designing
+                    div(class="c-image")
+                        img(src="images/t2.jpg", alt=" ", class="img-responsive")
+                        h6 Trainer Name
+                        div(class="clearfix")
+                    p(class="numbers") Students
+                        span 40
+                    p(class="paragraph-agileinfo") Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+                    p(class="batch") Batch Starts from 
+                        span 1 Jan 2018
+                div(class="col-md-4 courses-info")
+                    h5 Print Designing
+                    div(class="c-image")
+                        img(src="images/t3.jpg", alt=" ", class="img-responsive")
+                        h6 Trainer Name
+                        div(class="clearfix")
+                    p(class="numbers") <span>20</span> Students
+                    p(class="paragraph-agileinfo") Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+                    p(class="batch") Batch Starts from 
+                        span 20 Jan 2018
+    include layout/footer.pug
+
+
+    script(type='text/javascript', src='js/jquery-2.2.3.min.js')
+
+    script(src="js/main.js")
+
+    script(type="text/javascript", src="js/move-top.js")
+    script(type="text/javascript", src="js/easing.js")
+    script(type="text/javascript").
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    script(type="text/javascript").
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+                };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    script(src="js/bootstrap.js")

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Document
+		link(rel="stylesheet", type="text/css", href="css/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="css/my-login.css")
+	body(class="my-login-page")
+		section(class="h-100")
+			div(class="container h-100")
+				div(class="row justify-content-md-center align-items-center h-100")
+					div(class="card-wrapper")
+						div(class="brand")
+							img(src="img/logo.jpg", alt="bootstrap 4 login page")
+						div(class="card fat")
+							div(class="card-body")
+								h4(class="card-title") Forgot Password
+								form.my-login-validation(method="POST", action="/api/forget_password", novalidate="")
+										div(class="form-group")
+											label(for="email") E-Mail Address
+											input(type="email", class="form-control", name="email", value="", required, autofocus)#email
+											div(class="invalid-feedback") Email is invalid
+											div(class="otp")
+											div(class="form-text text-muted") By clicking "Reset Password" we will send an OTP.
+										if invalidEmail
+											.temp
+												p Invalid Email-ID. Please retry!!
+										div(class="form-group m-0")
+											button(type="submit", class="btn btn-primary btn-block") Send OTP
+				div(class="footer") Copyright &copy; 2017 &mdash; Banasthali University 
+
+	script(src="js/jquery-2.2.3.min.js")
+	script(src="js/my-login.js")
