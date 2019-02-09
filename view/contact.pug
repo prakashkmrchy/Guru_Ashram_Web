@@ -17,100 +17,89 @@ html(lang="en")
                         div(class="contact-fields")
                             input(type="text" name="Subject" placeholder="Subject" required="")
                         div(class="contact-fields")
-                            textarea(name="Message" placeholder="Message" required="") textarea
+                            textarea(name="Message" placeholder="Message" required="")
                         input(type="submit" value="Submit")
                 div(class="contact-maps")
-                    h5(class="main-w3l-title">Find us on the map)
-                    div(id="horizontalTab")
+                    h5(class="main-w3l-title") Find us on the map
+                    #horizontalTab
                         ul(class="resp-tabs-list")
-                            li
-                                Address 1
-                            li
-                                Address 2
-                            li
-                                Address 3
-                            li
-                                Address 4
+                            li Address 1
+                            li Address 2
+                                
                         div(class="resp-tabs-container")
                             div(class="tab1")
                                 div(class="col-md-5 add-left")
-                                    p(class="paragraph-agileinfo") <span>Location :) </span>550 LaGuardia Pl, New York, NY 10012, USA
-                                    p(class="paragraph-agileinfo") <span>Call Us :)</span>000-568-3214
-                                    p(class="paragraph-agileinfo") <span>Email :)</span> href="mailto:info@example.com">info@example.com
+                                    p(class="paragraph-agileinfo") <span>Location :</span>550 LaGuardia Pl, New York, NY 10012, USA
+                                    p(class="paragraph-agileinfo") <span>Call Us :</span>000-568-3214
+                                    p(class="paragraph-agileinfo") <span>Email :</span>
+                                        a(href="mailto:info@example.com") info@example.com
                                 div(class="col-md-7 add-right")
                                     iframe(src="https://www.google.com/maps/place/GURU+AASHRAM/@25.6734201,85.8381702,17z/data=!4m12!1m6!3m5!1s0x39ed8933e5b7f477:0x4b8c8a604e648199!2sGURU+AASHRAM!8m2!3d25.6734201!4d85.8403589!3m4!1s0x39ed8933e5b7f477:0x4b8c8a604e648199!8m2!3d25.6734201!4d85.8403589")
                                 div(class="clearfix")
 
                             div(class="tab2")
-                                div(class="col-md-5 add-left")
-                                    p(class="paragraph-agileinfo") <span>Location : </span>45 Rockefeller Plaza, New York, NY 10111, USA)
-                                    p(class="paragraph-agileinfo") <span>Call Us : </span>000-953-456)
-                                    p(class="paragraph-agileinfo") <span>Email : </span>a(href="mailto:info@example.com" info@example.com)
+                                div(class="col-md-5 add-center")
+                                    p(class="paragraph-agileinfo") <span>Location : </span>45 Rockefeller Plaza, New York, NY 10111, USA
+                                    p(class="paragraph-agileinfo") <span>Call Us : </span>000-953-456
+                                    p(class="paragraph-agileinfo") <span>Email : </span>
+                                        a(href="mailto:info@example.com") info@example.com
 
                                 div(class="col-md-7 add-right")
                                     iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20335.70063503884!2d-73.99748627450514!3d40.741786138002865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258fecf664df5%3A0x33d224a0d5dacca2!2sRockefeller+Center!5e0!3m2!1sen!2sin!4v1512641910229")
-                                div(class="clearfix")
-                            div(class="tab3")
-                                div(class="col-md-5 add-left")
-                                    p(class="paragraph-agileinfo") <span>Location : </span> 32nd Pl, Long Island City, NY 11101, USA
-                                    p(class="paragraph-agileinfo") <span>Call Us : </span>000-860-568
-                                    p(class="paragraph-agileinfo") <span>Email : </span><a href="mailto:info@example.com">info@example.com</a></p>
-                                div(class="col-md-7 add-right")
-                                    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86077.10926901785!2d-73.97583160860489!3d40.8209002394618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x80a26a8cc62f2aa5!2sCity+Ice+Pavilion!5e0!3m2!1sen!2sin!4v1512641992727")
                                 div(class="clearfix")
         <!-- Footer -->
     include layout/footer.pug
         
 
-        script(type='text/javascript' src='js/jquery-2.2.3.min.js')
-
-        <!-- script for responsive tabs -->
-        script(src="js/easy-responsive-tabs.js")
-        script(type="text/javascript").
-            $(document).ready(function () {
-                $('#horizontalTab').easyResponsiveTabs({
-                    type: 'default', //Types: default, vertical, accordion           
-                    width: 'auto', //auto or any width like 600px
-                    fit: true, // 100% fit in a container
-                    closed: 'accordion', // Start closed if in accordion view
-                    activate: function (event) { // Callback function if tab is switched
-                        var $tab = $(this);
-                        var $info = $('#tabInfo');
-                        var $name = $('span', $info);
-                        $name.text($tab.text());
-                        $info.show();
-                    }
-                });
-
-                $('#verticalTab').easyResponsiveTabs({
-                    type: 'vertical',
-                    width: 'auto',
-                    fit: true
-                });
+    script(type='text/javascript' src='js/jquery-2.2.3.min.js')
+    script(src="js/main.js")
+    <!-- script for responsive tabs -->
+    script(src="js/easy-responsive-tabs.js")
+    script(type="text/javascript").
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion           
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
             });
-        <!--// script for responsive tabs -->
-        <!-- start-smoth-scrolling -->
-        script(type="text/javascript" src="js/move-top.js")
-        script(type="text/javascript" src="js/easing.js")
-        script(type="text/javascript").
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $('html,body').animate({
-                        scrollTop: $(this.hash).offset().top
-                    }, 1000);
-                });
-            });
-        <!-- start-smoth-scrolling -->
-        <!-- here stars scrolling icon -->
-        script(type="text/javascript").
-            $(document).ready(function () {
 
-                $().UItoTop({
-                    easingType: 'easeOutQuart'
-                });
-
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
             });
-        <!-- //here ends scrolling icon -->
-        <!--js for bootstrap working-->
-        script(src="js/bootstrap.js")
+        });
+    <!--// script for responsive tabs -->
+    <!-- start-smoth-scrolling -->
+    script(type="text/javascript" src="js/move-top.js")
+    script(type="text/javascript" src="js/easing.js")
+    script(type="text/javascript").
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    <!-- start-smoth-scrolling -->
+    <!-- here stars scrolling icon -->
+    script(type="text/javascript").
+        $(document).ready(function () {
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    <!-- //here ends scrolling icon -->
+    <!--js for bootstrap working-->
+    script(src="js/bootstrap.js")
