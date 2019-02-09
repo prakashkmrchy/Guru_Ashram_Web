@@ -30,6 +30,10 @@ header
                                 a(href="typography.html") Typography
                     li
                         a(href="contact.html") Contact
-                    li
-                        a(href="/login") Login
+                    if !loggedIn
+                        li
+                            a(href="/login") Login
+                    else
+                        li
+                            a(href="/logout") Logout
 

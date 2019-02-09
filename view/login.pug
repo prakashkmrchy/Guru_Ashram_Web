@@ -4,7 +4,7 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
-		title My Login Page
+		title #{pageTitle}
 		link(rel="stylesheet", type="text/css",href="css/bootstrap.min.css")
 		link(rel="stylesheet", type="text/css", href="css/my-login.css")
 		
@@ -19,7 +19,7 @@ html(lang="en")
 						div(class="card fat")
 							div.card-body
 								h4.card-title Login
-								form.my-login-validation(method="POST", action="/api/login", novalidate="")
+								form.my-login-validation(method="POST", action="/login", novalidate="")
 									div.form-group
 										label(for="email") E-Mail Address
 										input.form-control(type="email", name="email" value="" required autofocus)#email
@@ -36,9 +36,9 @@ html(lang="en")
 											input.custom-control-input(type="checkbox" name="remember")#remember
 											label.custom-control-label(for="remember") Remeber Me
 									
-									if tmp
+									if errorMessage
 										.temp
-											p Invalid User Name or Password. Please retry!!
+											p #{errorMessage}
 									div.form-group.m-0
 										button.btn.btn-primary.btn-block(type="submit") Login
 									div.mt-4.text-center Don't have an account? 

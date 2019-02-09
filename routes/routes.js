@@ -2,12 +2,26 @@ const express = require('express');
 
 const router = express.Router();
 
-const userController = require('../controllers/user');
+const authController = require('../controllers/auth');
+const isAuth = require('../middleware/isAuth');
+const userController = require('../controllers/courseController');
 
-router.get('/courses.html', userController.getCourses);
+router
+    .get('/courses.html', userController.getCourses)
+    .post('/courses', isAuth, userController.postCourses);
 
-router.get('/forgot', userController.getForgot);
+router.get('/deleteCourse/:id', isAuth, userController.deleteCourse);
 
-router.get('/login', userController.getLogin);
+router.get('/forgot', authController.getForgot);
+
+router
+    .get('/login', authController.getLogin)
+    .post('/login', authController.postLogin);
+
+router
+    .get('/logout', authController.postLogout);
+
+
+
 
 module.exports = router;
