@@ -1,14 +1,14 @@
 const sgMail = require('@sendgrid/mail');
 const key = require('../utils/config');
 
-sgMail.setApiKey(key);
+sgMail.setApiKey(key.key);
 
 function send(emailId, sub, msg, name){
-    console.log(key);
+    console.log(key.key);
     ///console.log(sgMail);
     const message = {
-        to: "satyamvats5@gmail.com",
-        from: 'admin@guruaashram.com',
+        to: "rasrok4@gmail.com",
+        from: "satyamkumar13254@gmail.com",
         subject: sub,
         text: `You got a below response from Mr./Ms./Mrs. ${name} from ${emailId}: \n ${msg}`
       };
@@ -33,6 +33,9 @@ exports.sendResponse = (req, res, next) => {
     send(email, sub, msg, name)
         .then(() => {
             console.log("EMail Sent");
+    })
+    .catch(err => {
+        console.log(err);
     })
     res
         .status(200)
