@@ -5,6 +5,7 @@ const router = express.Router();
 const authController = require('../controllers/auth');
 const isAuth = require('../middleware/isAuth');
 const userController = require('../controllers/courseController');
+const mailController = require('../controllers/emailController');
 
 router
     .get('/courses.html', userController.getCourses)
@@ -20,6 +21,9 @@ router
 
 router
     .get('/logout', authController.postLogout);
+
+router
+    .post('/contact', mailController.sendResponse);
 
 
 
