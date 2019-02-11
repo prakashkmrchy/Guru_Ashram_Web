@@ -28,7 +28,9 @@ router
     .get('/contact.html', contactController.getPage)
     .post('/contact', mailController.sendResponse);
 
-router.get('/institutes.html', instituteController.getPage);
+router
+    .post('/institute', instituteController.addImage)
+    .get('/institutes.html', instituteController.getPage);
 
 router.get('/deleteInstitute/:id', isAuth, instituteController.deleteImage);
 

@@ -1,8 +1,8 @@
-const User = require('../models/courses');
+const Course = require('../models/courses');
 
 exports.getCourses = (req, res, next) => {
     console.log("LoggedIn: ", req.session.isLoggedIn);
-    User.find()
+    Course.find()
     .then(result => {
         console.log(result);
         res
@@ -29,14 +29,14 @@ exports.postCourses = (req, res, next) => {
             .status(401)
             .render('/postCourses');
     }
-    const user = new User({
+    const course = new Course({
         title: title,
         name: name,
         classTime: classTime,
         details: info,
         startingDate: startingDate
     })
-    user
+    course
         .save()
         .then(result => {
             console.log('Course Added');
@@ -53,7 +53,7 @@ exports.postCourses = (req, res, next) => {
 
 exports.deleteCourse = (req, res, next) => {
     const id = req.params.id;
-    User.findOneAndDelete({_id: id}, (err, msg) => {
+    Course.findOneAndDelete({_id: id}, (err, msg) => {
             if(err) {
                 console.log(err);
             }

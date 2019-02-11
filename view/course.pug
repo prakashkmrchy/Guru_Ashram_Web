@@ -15,13 +15,14 @@ html(lang="en")
                             h5 #{prod.title} 
                             div(class="c-image")
                                 img(src="images/t1.jpg" alt=" " class="img-responsive")
-                                h6 Trainer Name
+                                h6 #{prod.name}
                                 div(class="clearfix")
                             if loggedIn
                                 form(action='/deleteCourse/' +  prod._id, method="GET", onsubmit="return confirm('Do you really want to Delete this course?');")
                                     input(type="submit", value="Delete Course", style="BACKGROUND-COLOR: red")
                             div(class='buttons', style="padding-bottom: 12px;")
                             p(class="numbers") <span> 20 </span> Students
+                            p(class="numbers") <span> Batch Timing:  </span> #{prod.classTime}
                             p(class="paragraph-agileinfo") #{prod.details}
                             p(class="batch") Batch Starts from 
                                 span #{prod.startingDate}

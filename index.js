@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBSessionStorage = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
+const multer = require('multer');
+
 
 const MONGODB_URI = "mongodb://localhost:27017/guru_ashram";
 
@@ -19,15 +21,29 @@ const app = express();
 const route = require('./routes/routes')
 const User = require('./models/institute');
 const Courses = require('./models/courses');
+const key = require('./utils/config');
 
 app.set('view engine', 'pug');
 app.set('views', 'view');
 app.use(flash());
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+const fileStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, './view/images');
+    },
+    filename: (req, file, cb) => {
+      cb(null, new Date().toISOString() + '-' + file.originalname);
+    }
+  });
+
+app.use(
+    multer({ storage: fileStorage}).single('image')
+  ); 
 
 app.use(session({
-        secret: 'YeahThisIsMySecretKey',
+        secret: key.keyCookie,
         resave: true,
         saveUninitialized: false,
         //cookie: {maxAge: 10000, httpOnly: true, isLoggedIn: false},
@@ -38,6 +54,8 @@ app.use( (req, res, next) => {
     console.log(req.url, req.method);
     next();
 })
+
+ 
 
 app.use('/', route);
 

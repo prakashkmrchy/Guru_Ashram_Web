@@ -25,3 +25,27 @@ exports.deleteImage = (req, res, next) => {
             .redirect('/institutes.html');
     })
 }
+
+exports.addImage = (req, res, next) => {
+    //console.log(req.body);
+    const title = req.body.title;
+    const info = req.body.about;
+    const data = req.file.path.split('/');
+    const file = data[1] + '/' + data[2];
+    const gallery = new Gallery({
+        name: title,
+        info: info,
+        path: file
+    })
+    gallery
+        .save()
+        .then(result => {
+            console.log("Image Added");
+            res.redirect('/institutes.html')
+        })
+        .catch(err =>  {
+            console.log(err);
+            res.redirect('/institutes.html');
+        })
+
+}
