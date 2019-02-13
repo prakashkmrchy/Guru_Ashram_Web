@@ -45,7 +45,7 @@ exports.postCourses = (req, res, next) => {
 
 exports.deleteCourse = (req, res, next) => {
     const id = req.params.id;
-    User.findByIdAndRemove(id, (err, msg) => {
+    User.findOneAndDelete({_id: id}, (err, msg) => {
             if(err) {
                 console.log(err);
             }

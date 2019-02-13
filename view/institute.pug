@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+html(lang="en")
+    include layout/head.pug
+    link(href="css/simpleLightbox.css", rel="stylesheet", type="text/css")
+    
+    body
+        div(class="banner inner-banner", id="home")
+            div(class="container")
+                include layout/header.pug
+                div(class="clearfix")
+            
+        .gallery
+            .container
+                h5.main-w3l-title Our Institutes
+                if data.length > 0
+                    each pic in data
+                        div(class="col-md-4 gallery-columns")
+                            .gal_grid_outer
+                                a(title=pic.info, href="images/g1.jpg")
+                                    .gal_grid_outer1
+                                        img(src=pic.path, alt=" " class="img-responsive")
+                                        .gallery_grid_pos
+                                            if loggedIn
+                                                form(action='/deleteInstitute/' +  pic._id, method="GET", onsubmit="return confirm('Do you really want to Delete this course?');")
+                                                    input(type="submit", value="Delete Course", style="BACKGROUND-COLOR: red")
+                                            h3 #{pic.name}
+                .clearfix
+
+    include layout/footer.pug
+
+    script(type='text/javascript', src='js/jquery-2.2.3.min.js')
+
+    script(src="js/main.js")
+    script(src="js/simpleLightbox.js")
+    script($('.gallery-columns a').simpleLightbox())
+    script(type="text/javascript", src="js/move-top.js")
+    script(type="text/javascript", src="js/easing.js")
+    script(type="text/javascript").
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    script(type="text/javascript").
+        $(document).ready(function () {
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+        });
+
+    script(src="js/bootstrap.js")

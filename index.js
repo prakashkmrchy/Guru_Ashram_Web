@@ -17,7 +17,7 @@ const store = new MongoDBSessionStorage({
 const app = express();
 
 const route = require('./routes/routes')
-const User = require('./models/admin');
+const User = require('./models/institute');
 const Courses = require('./models/courses');
 
 app.set('view engine', 'pug');
@@ -62,11 +62,17 @@ mongoose
         // //     }
         //   });
         //   const user = new Courses({
-        //     title: 'JAVA',
-        //     classTime: 'Afternoon',
+        //     title: 'Automata',
+        //     classTime: 'Morning',
         //     details: 'Lets come together on AfterNoon',
         //     startingDate: '28th Feb, 2019'
         //   });
+        const user = new User({
+            name: 'CPP',
+            info: 'AAABBBCCCDDD',
+            path: 'images/g2.jpg'    
+        });
+        user.save();
         //   user.save();
         app.listen(5000, () => {
             console.log('Server is running on port number: 5000');
