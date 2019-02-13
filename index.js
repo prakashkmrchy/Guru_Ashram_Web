@@ -67,12 +67,12 @@ mongoose
         //     details: 'Lets come together on AfterNoon',
         //     startingDate: '28th Feb, 2019'
         //   });
-        const user = new User({
-            name: 'CPP',
-            info: 'AAABBBCCCDDD',
-            path: 'images/g2.jpg'    
-        });
-        user.save();
+        // const user = new User({
+        //     name: 'CPP',
+        //     info: 'AAABBBCCCDDD',
+        //     path: 'images/g2.jpg'    
+        // });
+        // user.save();
         //   user.save();
         app.listen(5000, () => {
             console.log('Server is running on port number: 5000');

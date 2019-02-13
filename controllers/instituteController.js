@@ -6,7 +6,7 @@ exports.getPage = (req, res, next) => {
         console.log(result);
         res
         .status(200)
-        .render('institute', {data: result, path: '/institute', loggedIn: req.session.isLoggedIn});
+        .render('institute', {data: result, path: '/institutes', loggedIn: req.session.isLoggedIn});
     })
     .catch(err => {
         console.log(err);
