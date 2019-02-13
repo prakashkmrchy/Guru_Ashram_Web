@@ -7,7 +7,7 @@ exports.getCourses = (req, res, next) => {
         console.log(result);
         res
             .status(200)
-            .render('course',{data: result, loggedIn: req.session.isLoggedIn});
+            .render('course',{data: result, loggedIn: req.session.isLoggedIn, path: '/courses'});
     })
     .catch(err => {
         console.log(err);

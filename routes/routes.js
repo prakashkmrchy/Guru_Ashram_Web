@@ -6,6 +6,7 @@ const authController = require('../controllers/auth');
 const isAuth = require('../middleware/isAuth');
 const userController = require('../controllers/courseController');
 const mailController = require('../controllers/emailController');
+const contactController = require('../controllers/contactController');
 
 router
     .get('/courses.html', userController.getCourses)
@@ -24,7 +25,8 @@ router
 
 router
     .post('/contact', mailController.sendResponse);
-
+    
+router.get('/contact.html', contactController.getPage);
 
 
 
