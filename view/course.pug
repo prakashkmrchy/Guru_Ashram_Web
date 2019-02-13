@@ -25,6 +25,37 @@ html(lang="en")
                             p(class="paragraph-agileinfo") #{prod.details}
                             p(class="batch") Batch Starts from 
                                 span #{prod.startingDate}
+        div(class="courses")
+            div(class="card text-center") 
+                ul(class="form-buttons")
+                    li
+                        a(href="#" data-toggle="modal" data-target="#myModal3") <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Add Course
+        div(class="modal fade" id="myModal3" tabindex="-1" role="dialog")
+            div(class="modal-dialog")
+                <!-- Modal content-->
+                div(class="modal-content")
+                    div(class="modal-header")
+                        button(type="button" class="close" data-dismiss="modal") &times;
+                        div(class="signin-form profile")
+                            h3(class="register-title") Add course
+                            div(class="login-form")
+                                form(action="#" method="post")
+                                    div(class="fields")
+                                        input(type="text" name="title" placeholder="Course name" required="")
+                                    div(class="fields")
+                                        input(type="text" name="name" placeholder="Teacher name" required="")
+                                    div(class="fields")
+                                        input(type="text" About="Number" placeholder="About the course" required="")
+                                    div(class="fields")
+                                        select(id="country1" onchange="change_country(this.value)" class="frm-field required sect")
+                                            option(value="") Class time
+                                            option(value="") Morning from 6.00
+                                            option(value="") Evening from 4.00
+                                            option(value="") Both Morning and Evening
+                                        h5 Batch Start Date
+                                    div(class="fields")
+                                    input(type="date" name="date" placeholder="Batch Start Date" required="")
+                                    input(type="submit" value="Submit")
     include layout/footer.pug
 
 
