@@ -15,31 +15,39 @@ exports.getCourses = (req, res, next) => {
 };
 
 exports.postCourses = (req, res, next) => {
+    console.log(req.body);
     const title = req.body.title;
-    const maxStudents = req.body.max;
-    const details = req.body.details;
-    const startingDate = req.body.startingDate;
-    if(!title || !maxStudents || !details || !startingDate) {
+    const name = req.body.name;
+    const info = req.body.about;
+    const startingDate = req.body.starting_date;
+    //const details = req.body.details;
+    const classTime = req.body.batch_time;
+    console.log(title, name, info, startingDate,  classTime);
+    if(!title || !startingDate || !name ) {
         req.flash('error', 'Please fill all required fields.');
-        res
+        return res
             .status(401)
             .render('/postCourses');
     }
     const user = new User({
         title: title,
-        maxStudents: maxStudents,
-        details: details,
+        name: name,
+        classTime: classTime,
+        details: info,
         startingDate: startingDate
     })
     user
         .save()
         .then(result => {
             console.log('Course Added');
-            res.redirect('/courses');
+            res.redirect('/courses.html');
         })
         .catch(err => {
             console.log(err);
+            res.redirect('/courses.html');
         })
+
+        
 
 };
 

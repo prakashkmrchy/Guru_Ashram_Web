@@ -11,7 +11,7 @@ const instituteController = require('../controllers/instituteController');
 
 router
     .get('/courses.html', userController.getCourses)
-    .post('/courses', isAuth, userController.postCourses);
+    .post('/course', isAuth, userController.postCourses);
 
 router.get('/deleteCourse/:id', isAuth, userController.deleteCourse);
 
